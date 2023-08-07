@@ -38,36 +38,36 @@ const CardInfo = ({ name, phoneNumber, email, address, url, index }) => {
 	};
 
 	return (
-		<div className="d-flex border m-5" style={{ width: "60rem" }}>
+		<div className="d-flex border m-5 " id="card" style={{ width: "60rem" }}>
 			<img src={url} className="card-img-top rounded-circle m-4" alt="foto de perfil" style={{ width: "10rem" }} />
-			<div className="card-body">
-				<h5 className="card-title">{name}</h5>
-				<p className="card-text">{address}</p>
-				<p className="card-text">{phoneNumber}</p>
-				<p className="card-text">{email}</p>
+			<div className="card-body descriptions">
+				<h5>{name}</h5>
+				<p >{address}</p>
+				<p >{phoneNumber}</p>
+				<p >{email}</p>
 			</div>
-			<div className="m-4 d-flex align-items-start">
-				<span className="p-3" onClick={handleRemoveCard}>
+			<div className="m-4">
+				<span className="p-3 borrar" onClick={handleRemoveCard}>
 					&#10006;
 				</span>
-				<span className="p-3" onClick={handleShowModal}>&#128393;</span>
+				<span className="p-3 editar" onClick={handleShowModal}>&#128393;</span>
 			</div>
 			{/* Modal para actualizar la tarjeta */}
 			<Modal show={showModal} onHide={handleCloseModal} backdrop="static" keyboard={false}>
 				<Modal.Header closeButton>
-					<Modal.Title>Actualizar tarjeta</Modal.Title>
+					<Modal.Title>Update Contact</Modal.Title>
 				</Modal.Header>
 				<Modal.Body>
 					<div className="form-group">
-						<label htmlFor="name">Nombre:</label>
+						<label htmlFor="name">Name:</label>
 						<input type="text" className="form-control" id="name" value={updatedName} onChange={(e) => setUpdatedName(e.target.value)} />
 					</div>
 					<div className="form-group">
-						<label htmlFor="email">Correo electrónico:</label>
+						<label htmlFor="email">Email:</label>
 						<input type="email" className="form-control" id="email" value={updatedEmail} onChange={(e) => setUpdatedEmail(e.target.value)} />
 					</div>
 					<div className="form-group">
-						<label htmlFor="phone">Número de teléfono:</label>
+						<label htmlFor="phone">Phone Number:</label>
 						<input type="tel" className="form-control" id="phone" value={updatedPhoneNumber} onChange={(e) => setUpdatedPhoneNumber(e.target.value)} />
 					</div>
 					<div className="form-group">
@@ -79,10 +79,10 @@ const CardInfo = ({ name, phoneNumber, email, address, url, index }) => {
 				</Modal.Body>
 				<Modal.Footer>
 					<Button variant="secondary" onClick={handleCloseModal}>
-						Cerrar
+						Close
 					</Button>
 					<Button variant="primary" onClick={handleUpdateCard}>
-						Guardar cambios
+						Save
 					</Button>
 				</Modal.Footer>
 			</Modal>

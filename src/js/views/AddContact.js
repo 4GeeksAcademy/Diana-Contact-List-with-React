@@ -50,8 +50,9 @@ const AddContact = () => {
 
   return (
     <>
-      <div className='container'>
+      <div className='container my-5'>
         <form className="row g-3">
+          <h2>Add Contact</h2>
           <div className="col-md-12">
             <label htmlFor="fullName" className="form-label">Full Name</label>
             <input type="text" className="form-control" id="fullName" placeholder='Full Name' value={fullName} onChange={handleFullNameChange} />

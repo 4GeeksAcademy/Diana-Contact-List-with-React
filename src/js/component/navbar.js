@@ -1,22 +1,19 @@
 import React from "react";
+import "/workspaces/Diana-Contact-List-with-React/src/styles/navbar.css"
 import { Link } from "react-router-dom";
 
 export const Navbar = () => {
 	return (
-		<nav className="navbar navbar-light bg-light mb-3">
+		<nav className="navbar">
+
 			<Link to="/">
-				<span className="navbar-brand mb-0 h1">React Boilerplate</span>
+				<button className="btn btn-dark mx-5">Go back</button>
 			</Link>
-			<div className="ml-auto">
-				<Link to="/AddContact">
-					<button className="btn btn-success">Añadir contacto</button>
-				</Link>
-			</div>
-			<div className="ml-auto">
-				<Link to="/demo">
-					<button className="btn btn-primary">Check the Context in action</button>
-				</Link>
-			</div>
+			
+			<Link to="/AddContact">
+				<button className="btn btn-dark mx-5">Añadir contacto</button>
+			</Link>
+			
 		</nav>
 	);
 };

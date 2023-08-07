@@ -1,5 +1,17 @@
-.card {
-    background-color: rgb(228, 218, 199);
-    margin-right: 2rem;
-    width: 70%;
+#card {
+    background-color: rgb(255, 255, 255);
+    border-radius: 2rem;
+    
+}
+
+.card-body.descriptions {
+  display: flex; 
+  flex-direction: column;
+  align-items: start; 
+  margin-top: 1rem;
+}
+
+.borrar:hover, .editar:hover {
+    cursor: pointer;
+    transform: scale(1.4);
 }
